@@ -35,7 +35,7 @@ var versionCmd = &cobra.Command{
 			Compiler string
 		}{
 			Version:  "v1.0.0",
-			App:      "radiorecord",
+			App:      "goradio",
 			OS:       runtime.GOOS,
 			Arch:     runtime.GOARCH,
 			Compiler: runtime.Compiler,
