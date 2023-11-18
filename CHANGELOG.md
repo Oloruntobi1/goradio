@@ -9,3 +9,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Fix root.go error
 - Create new test workflow
+- Add checking lastet version app
