@@ -42,7 +42,7 @@ func handleErr(err error) {
 	log.Error(err)
 	_, _ = fmt.Fprintf(
 		os.Stderr,
-		"%s %s\n",
+		"%s\n",
 		strings.Trim(err.Error(), " \n"),
 	)
 	os.Exit(1)
