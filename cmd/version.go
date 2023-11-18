@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/neptunsk1y/goradio/version"
 	"html/template"
 	"runtime"
 
@@ -21,8 +22,12 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of the goradio",
 	Run: func(cmd *cobra.Command, args []string) {
+		_, err := version.Latest()
+		if err != nil {
+			return
+		}
 		if lo.Must(cmd.Flags().GetBool("short")) {
-			_, err := cmd.OutOrStdout().Write([]byte("v1.0.0" + "\n"))
+			_, err := cmd.OutOrStdout().Write([]byte("v" + version.Version + "\n"))
 			handleErr(err)
 			return
 		}
@@ -34,7 +39,7 @@ var versionCmd = &cobra.Command{
 			App      string
 			Compiler string
 		}{
-			Version:  "v1.0.0",
+			Version:  "v" + version.Version,
 			App:      "goradio",
 			OS:       runtime.GOOS,
 			Arch:     runtime.GOARCH,

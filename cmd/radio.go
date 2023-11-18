@@ -3,6 +3,7 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"github.com/neptunsk1y/goradio/version"
 	"log"
 	"os"
 	"os/exec"
@@ -71,6 +72,10 @@ var radioCmd = &cobra.Command{
 	Short: "Launch radio",
 	Run: func(cmd *cobra.Command, args []string) {
 		radio.CheckMPV()
+		_, err := version.Latest()
+		if err != nil {
+			return
+		}
 		spinnerMusic = spinner.New(spinner.CharSets[14], 100*time.Millisecond)
 		spinnerMusic.Suffix = color.GreenString(" Getting stations...")
 		ClearScreen()
@@ -98,7 +103,7 @@ var radioCmd = &cobra.Command{
 					return strings.Contains(name, input)
 				},
 			}
-			fmt.Println("goradio v1.0.0")
+			fmt.Println("goradio v" + version.Version)
 			index, _, err := prompt.Run()
 			if err != nil {
 				if err.Error() == "^C" {
