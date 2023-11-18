@@ -103,3 +103,5 @@ go.work
 .idea
 
 *.exe
+
+dist/
