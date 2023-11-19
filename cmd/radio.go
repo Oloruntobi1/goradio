@@ -74,7 +74,7 @@ var radioCmd = &cobra.Command{
 		radio.CheckMPV()
 		_, err := version.Latest()
 		if err != nil {
-			return
+			fmt.Errorf("Error version check")
 		}
 		spinnerMusic = spinner.New(spinner.CharSets[14], 100*time.Millisecond)
 		spinnerMusic.Suffix = color.GreenString(" Getting stations...")

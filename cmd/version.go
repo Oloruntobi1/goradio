@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/neptunsk1y/goradio/version"
 	"html/template"
 	"runtime"
@@ -24,7 +25,7 @@ var versionCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		_, err := version.Latest()
 		if err != nil {
-			return
+			fmt.Errorf("Error version check")
 		}
 		if lo.Must(cmd.Flags().GetBool("short")) {
 			_, err := cmd.OutOrStdout().Write([]byte("v" + version.Version + "\n"))
