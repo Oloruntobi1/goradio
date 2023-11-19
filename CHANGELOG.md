@@ -14,3 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ## v1.1.1
 
 - Fix missed return
+
+## v1.1.2
+
+- Fix checking version(invalid link) 
