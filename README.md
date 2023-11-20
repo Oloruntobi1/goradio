@@ -1,6 +1,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/neptunsk1y/goradio.svg)](https://pkg.go.dev/github.com/neptunsk1y/goradio)
 [![Test](https://github.com/neptunsk1y/goradio/actions/workflows/test.yml/badge.svg)](https://github.com/neptunsk1y/radiorecord/actions/workflows/test.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/neptunsk1y/goradio)](https://goreportcard.com/report/github.com/neptunsk1y/goradio)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%20170%20free%20design%20blocks%20based%20on%20Bootstrap%204&url=https://www.froala.com/design-blocks&via=froala&hashtags=bootstrap,design,templates,blocks,developers)
 <h1 align="center">goradio</h1>
 
 <h3 align="center">The simple cli radio written in Golang<h3><h1>Tree</h1>
