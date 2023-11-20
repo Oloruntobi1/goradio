@@ -50,7 +50,7 @@ var versionCmd = &cobra.Command{
 		t, err := template.New("version").Funcs(map[string]any{
 			"faint":   lipgloss.NewStyle().Faint(true).Render,
 			"bold":    lipgloss.NewStyle().Bold(true).Render,
-			"magenta": lipgloss.NewStyle().Foreground(lipgloss.Color("14")).Render,
+			"magenta": lipgloss.NewStyle().Foreground(lipgloss.Color("#61afef")).Render,
 		}).Parse(`{{ magenta "▇▇▇" }} {{ magenta .App }} 
 
   {{ faint "Version" }}  {{ bold .Version }}

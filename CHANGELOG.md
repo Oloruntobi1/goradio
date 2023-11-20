@@ -18,3 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ## v1.1.2
 
 - Fix checking version(invalid link) 
+
+## v1.2.0
+
+- Added colored TUI
+- Fixed some bugs
