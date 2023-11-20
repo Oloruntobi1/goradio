@@ -131,6 +131,7 @@ func ClearScreen() {
 }
 
 func changeTitle(title string) {
+	spinnerMusic.Suffix = " Playing:                                                                 "
 	spinnerMusic.Suffix = " Playing: " + color.BlueString(title)
 }
 
