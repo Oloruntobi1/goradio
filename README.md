@@ -4,18 +4,13 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%20170%20free%20design%20blocks%20based%20on%20Bootstrap%204&url=https://www.froala.com/design-blocks&via=froala&hashtags=bootstrap,design,templates,blocks,developers)
 <h1 align="center">goradio</h1>
 
-<h3 align="center">The simple cli radio written in Golang<h3><h1>Tree</h1>
-  
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-
-<h1>Features</h1>
+<h3 align="center">The simple cli radio written in Golang<h3><h1>Features</h1>
 
 - Fast CLI
 - Using mpv to play radio
 - Wide variety of radio stations
 - Cross-Platform - Linux, macOS, Windows
+- Colorized TUI
 
 <h1>Installation</h1>
 
@@ -34,9 +29,59 @@ This script will automatically detect OS & Distro and use the best option availa
 
 To run: `goradio radio`
 
+<details>
+<summary>Keybinds</summary>
+
+| Bind         | Description       |
+|--------------|-------------------|
+| <kbd>↑</kbd> | Prev/Up station   |
+| <kbd>↓</kbd> | Next/Down station |
+| <kbd>→</kbd> | Next page         |
+| <kbd>←</kbd> | Prev page         | 
+| <kbd>/</kbd> | Search            |
+</details>
+
+
 <h3>Other</h3>
 
 See `goradio help` for more information
+
+```
+                               ___
+   ____ _____  _________ _____/ (_)___
+  / __  / __ \/ ___/ __  / __  / / __ \
+ / /_/ / /_/ / /  / /_/ / /_/ / / /_/ /
+ \__, /\____/_/   \__,_/\__,_/_/\____/
+/____/
+
+Usage:
+  goradio [command]
+
+Available Commands:
+  completion Generate the autocompletion script for the specified shell
+  help      Help about any command
+  radio     Launch radio
+  version   Print the version number of the goradio
+
+Flags:
+  -h, --help     help for goradio
+  -t, --toggle   Help message for toggle
+
+Use "goradio [command] --help" for more information about a command.
+```
+
+<h2> Built With </h2>
+
+* [Cobra](https://cobra.dev/) - The modern CLI framework used
+
+<h2> Contributing </h2>
+
+Please read [CONTRIBUTING.md](https://github.com/neptunsk1y/goradio/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+<h2> Authors </h2>
+
+* **Mikhail Chikankov** - *Creator project* - [neptunsk1y](https://github.com/neptunsk1y)
+
 
 <h2>License</h2>
 
@@ -44,3 +89,10 @@ Sample and its code provided under MIT license, please see [LICENSE](/LICENSE). 
 under their own respective and MIT-compatible Open Source licenses.
 
 Copyright (C) 2023, Mikhail Chikankov
+
+
+<h2> Acknowledgments </h2>
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
