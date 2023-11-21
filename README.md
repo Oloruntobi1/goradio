@@ -4,7 +4,7 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%20170%20free%20design%20blocks%20based%20on%20Bootstrap%204&url=https://www.froala.com/design-blocks&via=froala&hashtags=bootstrap,design,templates,blocks,developers)
 <h1 align="center">goradio</h1>
 
-<h3 align="center">The simple cli radio written in Golang<h3><h1>Features</h1>
+<h3 align="center">The simple cli radio written in Golang<h3><h2>Features</h2>
 
 - Fast CLI
 - Using mpv to play radio
@@ -12,7 +12,7 @@
 - Cross-Platform - Linux, macOS, Windows
 - Colorized TUI
 
-<h1>Installation</h1>
+<h2>Installation</h2>
 
 <h3>Golang (Windows, Linux, MacOS)</h3>
 
@@ -23,7 +23,7 @@ go install github.com/neptunsk1y/goradio@latest
 ```
 This script will automatically detect OS & Distro and use the best option available.
 
-<h1>Usage</h1>
+<h2>Usage</h2>
 
 <h3>Radio</h3>
 
