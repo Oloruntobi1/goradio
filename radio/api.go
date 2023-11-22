@@ -10,13 +10,13 @@ type API struct {
 	Endpoint      string
 }
 
-func RadioRecordAPI() API {
+func RecordAPI() API {
 	return API{
 		Endpoint: "https://www.radiorecord.ru/api/stations/",
 	}
 }
 
-func (api *API) GetJson() error {
+func (api *API) GetJSON() error {
 	url := "https://www.radiorecord.ru/api/stations/"
 	response, err := http.Get(url)
 	if err != nil {

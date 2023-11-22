@@ -38,17 +38,26 @@ func init() {
 	clear["linux"] = func() {
 		cmd := exec.Command("clear")
 		cmd.Stdout = os.Stdout
-		cmd.Run()
+		err := cmd.Run()
+		if err != nil {
+			fmt.Println("error clear")
+		}
 	}
 	clear["darwin"] = func() {
 		cmd := exec.Command("clear")
 		cmd.Stdout = os.Stdout
-		cmd.Run()
+		err := cmd.Run()
+		if err != nil {
+			fmt.Println("error clear")
+		}
 	}
 	clear["windows"] = func() {
 		cmd := exec.Command("cmd", "/c", "cls")
 		cmd.Stdout = os.Stdout
-		cmd.Run()
+		err := cmd.Run()
+		if err != nil {
+			fmt.Println("error clear")
+		}
 	}
 }
 
@@ -59,20 +68,24 @@ var radioCmd = &cobra.Command{
 		radio.CheckMPV()
 		_, err := version.Latest()
 		if err != nil {
-			fmt.Errorf("Error version check")
+			fmt.Println("Error version check")
 		}
 		spinnerMusic = spinner.New(spinner.CharSets[14], 100*time.Millisecond)
 		spinnerMusic.Suffix = color.GreenString(" Getting stations...")
-		spinnerMusic.Color("blue")
+		errSpinner := spinnerMusic.Color("blue")
+		if errSpinner != nil {
+			fmt.Println("error setup spinner color")
+		}
 		ClearScreen()
-		RadioApi := radio.RadioRecordAPI()
-		if err := RadioApi.GetJson(); err != nil {
-			fmt.Errorf("Error getting json")
+		RadioAPI := radio.RecordAPI()
+		if err := RadioAPI.GetJSON(); err != nil {
+			fmt.Println("Error getting json")
+			os.Exit(1)
 		}
 		stationsTitles := []string{}
 		stationsLinks := []string{}
 		for {
-			for _, i := range RadioApi.RequestResult.Result.Stations {
+			for _, i := range RadioAPI.RequestResult.Result.Stations {
 				stationsTitles = append(stationsTitles, i.Title)
 				stationsLinks = append(stationsLinks, i.Stream320)
 			}
@@ -130,10 +143,18 @@ func PlayStation(url string) {
 		if spinnerMusic.Active() {
 			spinnerMusic.Stop()
 		}
-		cmd.Process.Kill()
+		err := cmd.Process.Kill()
+		if err != nil {
+			fmt.Println("error close mpv")
+			os.Exit(1)
+		}
 	}()
 	stdout, _ := cmd.StdoutPipe()
-	cmd.Start()
+	err := cmd.Start()
+	if err != nil {
+		fmt.Println("error mpv start")
+		os.Exit(1)
+	}
 	stopAnimation := make(chan bool)
 	animationSearch := func() {
 		for {
@@ -173,6 +194,10 @@ func PlayStation(url string) {
 
 		}
 	}
-	cmd.Wait()
+	errWait := cmd.Wait()
+	if errWait != nil {
+		fmt.Println("mpv wait error")
+		os.Exit(1)
+	}
 	signal.Stop(signalCmd)
 }

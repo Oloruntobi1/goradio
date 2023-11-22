@@ -16,10 +16,10 @@ func handlePanic() {
 }
 
 func main() {
+	defer handlePanic()
 	_, err := version.Latest()
 	if err != nil {
-		fmt.Errorf("Error version check")
+		fmt.Println("Error version check")
 	}
 	cmd.Execute()
-	defer handlePanic()
 }
