@@ -3,8 +3,9 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"github.com/charmbracelet/log"
+	"github.com/manifoldco/promptui"
 	"github.com/neptunsk1y/goradio/version"
-	"log"
 	"os"
 	"os/exec"
 	"os/signal"
@@ -16,7 +17,6 @@ import (
 
 	"github.com/briandowns/spinner"
 	"github.com/fatih/color"
-	"github.com/manifoldco/promptui"
 	"github.com/neptunsk1y/goradio/radio"
 	"github.com/spf13/cobra"
 )
@@ -40,21 +40,6 @@ func init() {
 		cmd.Stdout = os.Stdout
 		cmd.Run()
 	}
-	clear["openbsd"] = func() {
-		cmd := exec.Command("clear")
-		cmd.Stdout = os.Stdout
-		cmd.Run()
-	}
-	clear["freebsd"] = func() {
-		cmd := exec.Command("clear")
-		cmd.Stdout = os.Stdout
-		cmd.Run()
-	}
-	clear["android"] = func() {
-		cmd := exec.Command("clear")
-		cmd.Stdout = os.Stdout
-		cmd.Run()
-	}
 	clear["darwin"] = func() {
 		cmd := exec.Command("clear")
 		cmd.Stdout = os.Stdout
@@ -69,7 +54,7 @@ func init() {
 
 var radioCmd = &cobra.Command{
 	Use:   "radio",
-	Short: "Launch radio",
+	Short: "launch radio",
 	Run: func(cmd *cobra.Command, args []string) {
 		radio.CheckMPV()
 		_, err := version.Latest()
@@ -78,6 +63,7 @@ var radioCmd = &cobra.Command{
 		}
 		spinnerMusic = spinner.New(spinner.CharSets[14], 100*time.Millisecond)
 		spinnerMusic.Suffix = color.GreenString(" Getting stations...")
+		spinnerMusic.Color("blue")
 		ClearScreen()
 		RadioApi := radio.RadioRecordAPI()
 		if err := RadioApi.GetJson(); err != nil {
@@ -182,17 +168,7 @@ func PlayStation(url string) {
 				time.Sleep(time.Second * 2)
 				stopAnimation <- true
 			} else {
-				tempTitle := ""
-				changeTitle(tempTitle)
-				for i, v := range title {
-					tempTitle = fmt.Sprintf("%s%c", tempTitle, v)
-					if i%2 == 0 {
-						changeTitle(tempTitle)
-					} else {
-						changeTitle(tempTitle + "_")
-					}
-				}
-				changeTitle(tempTitle)
+				changeTitle(title)
 			}
 
 		}
