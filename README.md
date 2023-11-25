@@ -21,13 +21,44 @@ Install using [Golang Packages](https://pkg.go.dev/github.com/neptunsk1y/goradio
 ```shell
 go install github.com/neptunsk1y/goradio@latest
 ```
+
 This script will automatically detect OS & Distro and use the best option available.
+
+
+<h3> From source </h3>
+
+Clone the repo
+```shell
+git clone https://github.com/neptunsk1y/goradio.git
+cd goradio
+```
+
+GNU Make **(Recommended)**
+```shell
+make setup # if you want to compile and install goradio to path
+```
+
+<details>
+<summary>If you don't have GNU Make use this</summary>
+
+
+```shell
+# To build
+go build
+
+# To install
+go install
+```
+
+</details>
 
 <h2>Usage</h2>
 
 <h3>Radio</h3>
 
 To run: `goradio radio`
+
+![Radio](https://github.com/neptunsk1y/goradio/blob/main/assets/goradio.gif?raw=true)
 
 <details>
 <summary>Keybinds</summary>
@@ -45,30 +76,6 @@ To run: `goradio radio`
 <h3>Other</h3>
 
 See `goradio help` for more information
-
-```
-                               ___
-   ____ _____  _________ _____/ (_)___
-  / __  / __ \/ ___/ __  / __  / / __ \
- / /_/ / /_/ / /  / /_/ / /_/ / / /_/ /
- \__, /\____/_/   \__,_/\__,_/_/\____/
-/____/
-
-Usage:
-  goradio [command]
-
-Available Commands:
-  completion Generate the autocompletion script for the specified shell
-  help      Help about any command
-  radio     Launch radio
-  version   Print the version number of the goradio
-
-Flags:
-  -h, --help     help for goradio
-  -t, --toggle   Help message for toggle
-
-Use "goradio [command] --help" for more information about a command.
-```
 
 <h2> Built With </h2>
 
