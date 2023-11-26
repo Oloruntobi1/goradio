@@ -24,6 +24,13 @@ go install github.com/neptunsk1y/goradio@latest
 
 This script will automatically detect OS & Distro and use the best option available.
 
+<h3>Docker</h3>
+
+Install using Docker.
+
+```shell
+docker pull neptunsk1y/goradio
+```
 
 <h3> From source </h3>
 
