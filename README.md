@@ -110,3 +110,7 @@ Copyright (C) 2023, Mikhail Chikankov
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+  
+[![Stargazers repo roster for @neptunsk1y/goradio](https://reporoster.com/stars/neptunsk1y/goradio)](https://github.com/neptunsk1y/goradio/stargazers)
+
+[![Forkers repo roster for @neptunsk1y/goradio](https://reporoster.com/forks/neptunsk1y/goradio)](https://github.com/neptunsk1y/goradio/network/members)
